@@ -1,0 +1,30 @@
+{% extends 'master/layout.html' %}
+
+{% block content %}
+
+    <h1>Оставьте отзыв на услугу</h1>
+
+    <div>{{ order.service_type }}</div>
+    <div>{{ order.order_date }}</div>
+    <div>{{ order.all_price }}</div>
+
+
+    <hr>
+
+    {% if order.reviews_orders.count %}
+        <h4>Ваш отзыв</h4>
+        <div>
+            <div>{{ order.reviews_orders.first.text }}</div>
+            <div>Звезд - {{ order.reviews_orders.first.scores }}</div>
+        </div>
+    {% else %}
+        <h4>Оставить отзыв</h4>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Оставить отзыв</button>
+        </form>
+    {% endif %}
+    <hr>
+
+{% endblock %}

@@ -1,5 +1,5 @@
 """
-WSGI config for clean_flat_new project.
+WSGI config for clean_flat project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'clean_flat_new.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'clean_flat.settings')
 
 application = get_wsgi_application()

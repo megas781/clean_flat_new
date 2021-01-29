@@ -1,0 +1,119 @@
+{% extends 'master/layout.html' %}
+
+{% block content %}
+    <div class="content-block stick-to-footer">
+        <div class="container-bg with-bg container-fluid"
+             data-style="background-image: url(https://dotcomdist.com/wp-content/uploads/2017/12/7-1-1024x683.jpg);">
+            <div class="container-bg-overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-item-title">
+                                <h1 class="text-center texttransform-none">Новый Заказ</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-container container">
+            <div class="row">
+                <div class="col-md-12 entry-content">
+                    <article>
+                        <div class="vc_row wpb_row vc_row-fluid">
+                            <div class="wpb_column vc_column_container vc_col-sm-2">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper"></div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-8">
+                                <div class="vc_column-inner vc_custom_1490279597723">
+                                    <div class="wpb_wrapper">
+                                        <div
+                                                class="mgt-header-block clearfix text-center text-black wpb_content_element mgt-header-block-style-2 mgt-header-block-fontsize-medium mgt-header-texttransform-none mgt-header-block-33885738 vc_custom_1490281413466"
+                                        >
+                                                                                        <p class="mgt-header-block-subtitle">Введите данные для заказа</p>
+                                            {#                                            <h2 class="mgt-header-block-title text-font-weight-default">Вход</h2>#}
+                                            <div class="mgt-header-line mgt-header-line-margin-small"></div>
+                                        </div>
+                                        <div role="form" class="wpcf7" id="wpcf7-f11-p1532-o1" lang="en-US" dir="ltr">
+                                            <div class="screen-reader-response"></div>
+                                            <form class="quform" method="post" enctype="multipart/form-data">
+
+                                                {% csrf_token %}
+
+                                                <div class="quform-elements">
+                                                    <div class="quform-element">
+                                                        <p>
+                                                            <span class="wpcf7-form-control-wrap your-name">
+{#                                                                <input id="name" type="text" name="name" size="40" class="input1" aria-required="true" aria-invalid="false" placeholder="Логин*">#}
+                                                                <span>Тип уборки: </span>{{ form.service_type }}
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="quform-element">
+                                                        <p>
+                                                            <span class="wpcf7-form-control-wrap your-name">
+{#                                                                <input id="name" type="text" name="name" size="40" class="input1" aria-required="true" aria-invalid="false" placeholder="Логин*">#}
+                                                                <span>Кол-во комнат: </span>{{ form.room_count }}
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="quform-element">
+                                                        <p>
+                                                            <span class="wpcf7-form-control-wrap your-name">
+{#                                                                <input id="name" type="text" name="name" size="40" class="input1" aria-required="true" aria-invalid="false" placeholder="Логин*">#}
+                                                                <span>Кол-во санузлов: </span>{{ form.bathroom_count }}
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="quform-element">
+                                                        <p>
+                                                            <span class="wpcf7-form-control-wrap your-name">
+{#                                                                <input id="name" type="text" name="name" size="40" class="input1" aria-required="true" aria-invalid="false" placeholder="Логин*">#}
+                                                                <span>Адрес: </span>{{ form.address }}
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="quform-element">
+                                                        <p>
+                                                            <span class="wpcf7-form-control-wrap your-name">
+{#                                                                <input id="name" type="text" name="name" size="40" class="input1" aria-required="true" aria-invalid="false" placeholder="Логин*">#}
+                                                                <span>Когда нужно убратья: </span>{{ form.order_date }}
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="quform-element">
+                                                        <!-- Begin Submit button -->
+                                                        <div class="quform-submit">
+                                                            <div class="quform-submit-inner">
+                                                                <button type="submit" class="submit-button">
+                                                                    <span>Создать заказ</span></button>
+                                                            </div>
+                                                            <div class="quform-loading-wrap"><span
+                                                                    class="quform-loading"></span></div>
+                                                        </div>
+
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-2">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
+                             class="vc_row wpb_row vc_row-fluid vc_custom_1490282692179 vc_row-no-padding">
+                        </div>
+                        <div class="vc_row-full-width vc_clearfix"></div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

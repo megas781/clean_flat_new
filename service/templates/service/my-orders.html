@@ -1,0 +1,150 @@
+{% extends 'master/layout.html' %}
+
+{% block content %}
+
+    <div class="content-block stick-to-footer">
+        <div class="container-bg with-bg container-fluid"
+             data-style="background-image: url(https://static.ucraft.app/fs/ucraft/userFiles/version5/uploaded-media/glenn-carstens-peters-190592.jpg);">
+            <div class="container-bg-overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-item-title">
+                                <h1 class="text-center texttransform-none">Мои заказы</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-container container">
+            <div class="row">
+                <div class="col-md-12 entry-content">
+                    <article>
+
+                        <div class="vc_row wpb_row vc_row-fluid vc_custom_1491403460554 vc_row-o-equal-height vc_row-flex">
+                            <div class="wpb_column vc_column_container vc_col-sm-3">
+                                <div class="vc_column-inner vc_custom_1487239752272">
+                                    <div class="wpb_wrapper"></div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div
+                                                class="mgt-header-block clearfix text-center text-black wpb_content_element mgt-header-block-style-2 mgt-header-block-fontsize-medium mgt-header-texttransform-none mgt-header-block-55848039 vc_custom_1493983141390"
+                                        >
+{#                                            <p class="mgt-header-block-subtitle">Заказы</p>#}
+                                            <h2 class="mgt-header-block-title text-font-weight-default">Список ваших заказов</h2>
+                                            <div class="mgt-header-line mgt-header-line-margin-small"></div>
+                                        </div>
+                                        <div class="wpb_text_column wpb_content_element text-size-medium">
+                                            <div class="wpb_wrapper">
+                                                <p style="text-align: center;">Здесь вы можете посмотреть все свои заказы</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-3">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                        нада-->
+                        <div data-vc-full-width="true" data-vc-full-width-init="false"
+                             class="vc_row wpb_row vc_row-fluid vc_custom_1493983103581">
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+                                            <div class="wpb_wrapper">
+                                                <table>
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Код заказа</th>
+                                                        <th>Дата уборки</th>
+                                                        <th>Вид уборки</th>
+                                                        <th>Начальная стоимость</th>
+                                                        <th>Кол-во комнат</th>
+                                                        <th>Кол-во санузлов</th>
+                                                        <th>Общая стоимость</th>
+                                                        <th>Действия</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    {% for order in orders %}
+                                                        <tr>
+                                                            <td>000{{ order.id }}</td>
+                                                            <td>{{ order.order_date }}</td>
+                                                            <td>{{ order.service_type }}</td>
+                                                            <td>{{ order.service_type.initial_price }}</td>
+                                                            <td>{{ order.room_count }}
+                                                                * {{ order.service_type.add_room_price }} руб
+                                                            </td>
+                                                            <td>{{ order.bathroom_count }}
+                                                                * {{ order.service_type.add_bathroom_price }} руб
+                                                            </td>
+                                                            <td>{{ order.all_price }} руб</td>
+                                                            <td><a class="btn btn-success" style="white-space: nowrap"
+                                                                   href="{% url 'send-review-url' order.id %}">Подробнее</a>
+                                                            </td>
+                                                        </tr>
+                                                    {% endfor %}
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vc_row-full-width vc_clearfix"></div>
+                        {#                        <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1492792673781 vc_row-no-padding">#}
+                        {#                            <div class="wpb_column vc_column_container vc_col-sm-12">#}
+                        {#                                <div class="vc_column-inner">#}
+                        {#                                    <div class="wpb_wrapper">#}
+                        {#                                        <div class="mgt-promo-block-container wpb_content_element">#}
+                        {#                                            <div class="mgt-promo-block-wrapper">#}
+                        {#                                                <div#}
+                        {#                                                    class="mgt-promo-block white-text cover-image darken mgt-promo-block-69392783"#}
+                        {#                                                    data-style="background-color: #f5f5f5;background-image: url(upload/young-mens.jpg);background-repeat: no-repeat;height: 550px;"#}
+                        {#                                                >#}
+                        {#                                                    <div class="mgt-promo-block-content va-middle">#}
+                        {#                                                        <div class="mgt-promo-block-content-inside vc_custom_1493649727282">#}
+                        {#                                                            <h5 style="text-align: center; margin-bottom: 0px;"><strong>Be with Barrel</strong></h5>#}
+                        {#                                                            <h2 style="text-align: center;">#}
+                        {#                                                                Focus on what<br />#}
+                        {#                                                                matters to you#}
+                        {#                                                            </h2>#}
+                        {#                                                            <div#}
+                        {#                                                                class="mgt-button-wrapper mgt-button-wrapper-align-center mgt-button-wrapper-display-newline mgt-button-top-margin-true mgt-button-right-margin-false mgt-button-round-edges-small"#}
+                        {#                                                            >#}
+                        {#                                                                <a#}
+                        {#                                                                    class="btn hvr-float mgt-button-icon-true mgt-button mgt-style-red mgt-size-large mgt-align-center mgt-display-newline mgt-text-size-normal mgt-button-icon-separator- mgt-button-icon-position-right text-font-weight-default mgt-text-transform-none"#}
+                        {#                                                                    href="#"#}
+                        {#                                                                >#}
+                        {#                                                                    Purchase template<i class="entypo-icon entypo-icon-right-open-mini"></i>#}
+                        {#                                                                </a>#}
+                        {#                                                            </div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        {#                        <div class="vc_row-full-width vc_clearfix"></div>#}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

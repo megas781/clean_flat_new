@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-US">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+    <title>Сервис по уборке квартир Clean Flat</title>
+
+    <link rel="stylesheet" href="{% static 'master/css/pe-icon-7-stroke.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/js/plugins/responsive-lightbox/assets/nivo/nivo-lightbox.min.css' %}"
+          type="text/css"
+          media="all"/>
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/responsive-lightbox/assets/nivo/themes/default/default.css' %}"
+          type="text/css"
+          media="all"/>
+    <link rel="stylesheet" href="{% static 'master/js/plugins/revslider/public/assets/css/settings.css' %}"
+          type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/bootstrap.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/js/plugins/owl-carousel/owl.carousel.css' %}" type="text/css"
+          media="all"/>
+    <link rel="stylesheet" href="{% static 'master/js/plugins/owl-carousel/owl.theme.css' %}" type="text/css"
+          media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/style.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/responsive.css?ver=all' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/animations.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/mega-menu.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/mega-menu-responsive.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css' %}"
+          type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/pe-icon-7-stroke.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/js/plugins/select2/select2.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/offcanvasmenu.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/nanoscroller.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/hover.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/js/plugins/thickbox/thickbox.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/js/plugins/js_composer/assets/css/js_composer.min.css' %}"
+          type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/css-skin.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/lib/bower/vcIconPicker/css/jquery.fonticonpicker.min.css' %}"
+          type="text/css" media="all"/>
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/lib/bower/vcIconPicker/themes/grey-theme/jquery.fonticonpicker.vcgrey.min.css' %}"
+          type="text/css" media="all"/>
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/css/lib/vc-open-iconic/vc_openiconic.min.css' %}"
+          type="text/css" media="all"/>
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/css/lib/typicons/src/font/typicons.min.css' %}"
+          type="text/css" media="all"/>
+    `
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/css/lib/vc-entypo/vc_entypo.min.css' %}" type="text/css"
+          media="all"/>
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/css/lib/vc-linecons/vc_linecons_icons.min.css' %}"
+          type="text/css" media="all"/>
+    {#    <link rel="stylesheet"#}
+    {#          href="{% static 'master/js/plugins/js_composer/assets/css/lib/monosocialiconsfont/monosocialiconsfont.min.css' %}"#}
+    {#          type="text/css" media="all"/>#}
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/css/lib/vc-material/vc_material.min.css' %}"
+          type="text/css"
+          media="all"/>
+    <link rel="stylesheet"
+          href="{% static 'master/js/plugins/js_composer/assets/lib/bower/animate-css/animate.min.css' %}"
+          type="text/css"
+          media="screen"/>
+    <link rel="stylesheet" href="{% static 'master/js/plugins/js_composer/assets/css/js_composer_tta.min.css' %}"
+          type="text/css"
+          media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/slick.css' %}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'master/css/slick-theme.css' %}" type="text/css" media="all"/>
+
+
+    {#    <link rel="preconnect" href="https://fonts.gstatic.com">#}
+    {#<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">#}
+
+    {#    <link rel="stylesheet"#}
+    {#          href="http://fonts.googleapis.com/css?family=Nunito%3A400%2C700%26subset%3Dlatin%7CPoppins%3A300%2C300italic%2C400%2C400italic%2C600%2C600italic%26subset%3Dlatin%7CPoppins%3A300%2C400%2C600%26subset%3Dlatin&amp;ver=1.0"#}
+    {#          type="text/css" media="all"/>#}
+    {#    <link href="https://fonts.googleapis.com/css?family=Nunito:400%2C300%2C200%2C500%7CPoppins:300%7COpen+Sans:300"#}
+    {#          rel="stylesheet" property="stylesheet" type="text/css" media="all"/>#}
+
+</head>
+
+<body class="home page-template-default page page-id-19 wpb-js-composer js-comp-ver-5.2 vc_responsive transparent-header">
+
+<div class="header-menu-bg top-menu-position-header top-menu-align-left">
+    <div class="header-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-top-text">Чистая квартира. Без усилий.</div>
+                    <div class="social-icons-wrapper">
+                        <ul>
+                            <li>
+                                <a href="https://vk.com/megas781" target="_blank" class="a-vk"><i
+                                        class="fa fa-vk"></i></a>
+                                <a href="https://instagram.com/megas781" target="_blank" class="a-instagram"><i
+                                        class="fa fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-top-menu-container-toggle"></div>
+                    <div class="top-menu-container">
+                        <ul id="menu-top-menu" class="top-menu">
+                            <li class="menu-item"><a href="tel:89772565680">+7 (977) 256-56-80</a></li>
+                            <li class="menu-item"><a href="{% url 'faq-url' %}">FAQ</a></li>
+                            {% if request.user.is_authenticated and not request.user.is_staff %}
+                            <li class="menu-item"><a href="{% url 'create-order-url' %}">Сделать заказ</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="main-header sticky-header-elements-headeronly mainmenu-position-menu_in_header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-left">
+                    <a class="logo-link logo-text" href="{% url 'master-index-url' %}">Clean Flat</a>
+                    <div class="mobile-sidebar-trigger">
+                        <div class="st-sidebar-trigger-effects">
+                            <a class="float-sidebar-toggle-btn" data-effect="st-sidebar-effect-2"><i
+                                    class="fa fa-bars"></i></a>
+                        </div>
+                    </div>
+                    <div class="mobile-main-menu-toggle" data-toggle="collapse" data-target=".collapse"><i
+                            class="fa fa-bars"></i></div>
+                    <div class="mobile-trigger-search">
+                        <a class="search-toggle-btn"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+
+                <div class="header-center">
+                    <div id="navbar"
+                         class="navbar navbar-default clearfix mgt-mega-menu menu-left menu-uppercase menu-style-border-bottom">
+                        <div class="navbar-inner">
+                            <div class="navbar-collapse collapse">
+                                <ul id="menu-main-menu-2" class="nav">
+                                    <li class="menu-item menu-item-home">
+                                        <a href="/"><span>Главная</span></a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a href="{% url 'service-index-url' %}"><span>Услуги</span></a>
+                                        <ul class="sub-menu megamenu-column-1 level-0">
+                                            <li class="menu-item">
+                                                <a href="{% url 'service-index-url' %}">Поддерживающая уборка</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="{% url 'service-index-url' %}">Генеральная уборка</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="{% url 'service-index-url' %}">Уборка после ремонта<sup
+                                                        data-style="background-color: #94c174">new</sup></a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a>Скоро...</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'about-url' %}"><span>О нас</span></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'contacts-url' %}"><span>Контакты</span></a>
+                                    </li>
+
+                                    {% if request.user.is_authenticated and not request.user.is_staff %}
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#"><span>Заказы</span></a>
+                                            <ul class="sub-menu megamenu-column-1 level-0">
+                                                <li class="menu-item">
+                                                    <a href="{% url 'my-orders' %}">Мои заказы</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'create-order-url' %}">Сделать заказ<sup
+                                                            data-style="background: red"> + </sup></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'about-url' %}">Как это происходит<sup
+                                                            data-style="background: gray">
+                                                        ? </sup></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    {% elif request.user.is_authenticated and request.user.is_staff and not request.user.is_superuser %}
+                                        {#                                    работники#}
+                                        <li class="menu-item">
+                                            <a href="#"><span>Заказы</span></a>
+                                        </li>
+                                    {% elif request.user.is_authenticated and request.user.is_superuser %}
+                                        {#                                    админ#}
+                                        <li class="menu-item">
+                                            <a href="/admin"><span>Админ-панель</span></a>
+                                        </li>
+                                    {% else %}
+                                        {#                    Для анонимуса #}
+
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <ul class="header-nav">
+                        <li class="search-toggle">
+                            <div id="trigger-search">
+                                <a class="search-toggle-btn"><i class="fa fa-search"></i></a>
+                            </div>
+                        </li>
+                        {% if request.user.is_authenticated %}
+                            <li>
+                                <div>
+                                    <div class="nav-item nav-link" style="color: white">{{ request.user }}
+
+                                        {% if request.user.is_authenticated and not request.user.is_staff %}
+
+                                        {% elif request.user.is_authenticated and request.user.is_staff and not request.user.is_superuser %}
+                                            {# работники #}
+                                            <sup>Работник</sup>
+                                        {% elif request.user.is_authenticated and request.user.is_superuser %}
+                                            {# админ #}
+                                            <sup>Админ</sup>
+                                        {% else %}
+
+                                        {% endif %}
+
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="{% url 'logout-url' %}"><i class="fa fa-sign-out"></i></a>
+                                </div>
+                            </li>
+                        {% else %}
+                            {#                    <a href="{% url 'register-url' %}" class="nav-item nav-link">Регистрация</a>#}
+                            <li>
+                                <div>
+                                    <a href="{% url 'login-url' %}"><i class="fa fa-sign-in"></i></a>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {#                                <a href="#"><i class="fa fa-sign-in"></i></a>#}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="content-block">
+    {% block content %}{% endblock %}
+</div>
+
+
+<div class="container-fluid footer-wrapper">
+    <div class="row">
+        <div class="footer-sidebar-wrapper footer-sidebar-style-dark" data-style="">
+            <div class="footer-sidebar sidebar container ">
+                <ul id="footer-sidebar" class="clearfix">
+                    <li id="text-2 col-4" class="widget widget_text">
+                        <div class="textwidget">
+
+                            <p>Нельзя быть экспертами во всем, но мы стараемся. Наши клиннеры наведут порядок во всей
+                                квартире, в том числе в ванной и на кухне. И еще мы одежду аккуратно складываем,
+                                расставляем обувь, меняем постельное бельё и застилаем кровать.</a></p>
+                        </div>
+                    </li>
+                    <li id="nav_menu-2 col-4" class="widget widget_nav_menu">
+                        <h2 class="widgettitle">Ссылки разработчика</h2>
+                        <div class="menu-footermenu-simple-container">
+                            <ul id="menu-footermenu-simple" class="menu">
+                                <li class="menu-item"><a href="https://github.com/megas781/clean_flat">GitHub</a></li>
+                                <li class="menu-item"><a href="#">Лендинг проблемматики</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="text-3 col-4" class="widget widget_text">
+                        <h2 class="widgettitle">Контакты</h2>
+                        <div class="textwidget">
+                            <p>Мы доступны 24/7. Звоните в любое время!</p>
+                            <p>
+                                T: +7 (977) 256-56-80<br/>
+                                E:
+                                <span class="text-color-theme">
+                                        <a href="#" class="__cf_email__">support@clean-flat.ru</a>
+                                    </span>
+                            </p>
+                            <div class="widget_barrel_social_icons shortcode_barrel_social_icons">
+                                <div class="social-icons-wrapper">
+                                    <ul>
+                                        <li>
+                                            <a href="https://vk.com/megas781" target="_blank" class="a-vk"><i
+                                                    class="fa fa-vk"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://instagram.com/megas781" target="_blank"
+                                               class="a-instagram"><i
+                                                    class="fa fa-instagram"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer class="footer-style-dark footer-col-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 footer-copyright">Сайт создал студент ИТ факультета Московского Политеха <a
+                            href="https://vk.com/megas781">Калачев Глеб</a></div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            <a class="scroll-to-top" href="#top"></a>
+        </footer>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="{% static 'master/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/jquery-migrate.min.js' %}"></script>
+
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var thickboxL10n = {
+        next: "Next >",
+        prev: "< Prev",
+        image: "Image",
+        of: "of",
+        close: "Close",
+        noiframes: "This feature requires inline frames. You have iframes disabled or your browser does not support them.",
+        loadingAnimation: "http:\/\/wp.magnium-themes.com\/barrel\/barrel-1\/wp-includes\/js\/thickbox\/loadingAnimation.gif",
+    };
+    /* ]]> */
+</script>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var rlArgs = {
+        script: "nivo",
+        selector: "lightbox",
+        customEvents: "",
+        activeGalleries: "1",
+        effect: "fade",
+        clickOverlayToClose: "1",
+        keyboardNav: "1",
+        errorMessage: "The requested content cannot be loaded. Please try again later.",
+    };
+    /* ]]> */
+</script>
+<script type="text/javascript"
+        src="{% static 'master/js/plugins/responsive-lightbox/assets/nivo/nivo-lightbox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/responsive-lightbox/js/frontd.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/js-skin.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/thickbox/thickbox.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/easing.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/select2/select2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/jquery.nanoscroller.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/jquery.mixitup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/TweenMax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/template.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'master/js/plugins/js_composer/assets/js/dist/js_composer_front.min.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'master/js/plugins/js_composer/assets/lib/waypoints/waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/jquery.appear.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/jquery.countTo.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'master/js/plugins/js_composer/assets/lib/bower/skrollr/dist/skrollr.min.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'master/js/plugins/js_composer/assets/lib/vc_accordion/vc-accordion.min.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'master/js/plugins/js_composer/assets/lib/vc-tta-autoplay/vc-tta-autoplay.min.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'master/js/plugins/js_composer/assets/lib/vc_tabs/vc-tabs.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'master/js/plugins/slick.min.js' %}"></script>
+
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            $("#portfolio-list-33868484").mixItUp({effects: ["fade", "scale"], easing: "snap"});
+        });
+    })(jQuery);
+</script>
+
+<div class="search-fullscreen-container"></div>
+<div class="search-fullscreen-wrapper">
+    <div class="search-fullscreen-form">
+        <div class="search-close-btn"><i class="pe-7s-close"></i></div>
+        <form method="get" id="searchform_p" class="searchform" action="#">
+            <input type="search" class="field" name="s" value="" id="s_p"
+                   placeholder="Введите ключевые слова для поиска"/>
+            <input type="submit" class="submit btn" id="searchsubmit_p" value="Search"/>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

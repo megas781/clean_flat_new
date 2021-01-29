@@ -1,0 +1,217 @@
+{% extends 'master/layout.html' %}
+
+{% block content %}
+
+    <div class="content-block stick-to-footer">
+        <div class="container-bg with-bg container-fluid" data-style="background-image: url(https://www.staffingattiffanies.com/wp-content/uploads/2019/07/woman-cleaning-the-wooden-shelf-in-living-room.jpg);">
+            <div class="container-bg-overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-item-title">
+                                <h1 class="text-center texttransform-none">Детали заказа</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page-container container">
+            <div class="row">
+                <div class="col-md-12 entry-content">
+                    <article>
+
+                        <div class="vc_row wpb_row vc_row-fluid vc_custom_1491403460554 vc_row-o-equal-height vc_row-flex">
+                            <div class="wpb_column vc_column_container vc_col-sm-3">
+                                <div class="vc_column-inner vc_custom_1487239752272">
+                                    <div class="wpb_wrapper"></div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="mgt-header-block clearfix text-center text-black wpb_content_element mgt-header-block-style-2 mgt-header-block-fontsize-medium mgt-header-texttransform-none mgt-header-block-81447736 vc_custom_1496242415810">
+                                            <h2 class="mgt-header-block-title text-font-weight-default">Заказ
+                                                #000{{ order.id }}</h2>
+                                            <p class="mgt-header-block-subtitle">Дата: {{ order.order_date }}</p>
+                                            <p class="mgt-header-block-subtitle">Стоимость: {{ order.all_price }}</p>
+                                            <div class="mgt-header-line mgt-header-line-margin-small"></div>
+                                        </div>
+                                        {#                                        <div class="wpb_text_column wpb_content_element text-size-medium">#}
+                                        {#                                            <div class="wpb_wrapper">#}
+                                        {#                                                <p style="text-align: center;"></p>#}
+                                        {#                                            </div>#}
+                                        {#                                        </div>#}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-3">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        {% if order.reviews_orders.count %}
+                            <h3>Ваш отзыв</h3>
+                            <div style="margin-left: 32px">
+                                <div>
+                                    <p>{{ request.user }}:</p>
+                                    <p><i>{{ order.reviews_orders.first.text }}</i></p>
+                                    <div style="font-weight: bold; color: green">Звезд
+                                        - {{ order.reviews_orders.first.scores }}</div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <h3>Оставьте отзыв</h3>
+                            <form method="post">
+                                {% csrf_token %}
+                                <p>Отзыв</p>
+                                <div>{{ form.text }}</div>
+                                <p>Оценка</p>
+                                <div>{{ form.scores }}</div>
+                                <button type="submit">Оставить отзыв</button>
+                            </form>
+                        {% endif %}
+
+                        {#                        <div class="vc_row wpb_row vc_row-fluid vc_custom_1491832839983">#}
+                        {#                            <div class="wpb_column vc_column_container vc_col-sm-12">#}
+                        {#                                <div class="vc_column-inner">#}
+                        {#                                    <div class="wpb_wrapper">#}
+                        {#                                        <div class="mgt-client-reviews-wrapper">#}
+                        {#                                            <div id="mgt-client-reviews-36330174" class="mgt-client-reviews wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_content_element owl-normal-nav" style="display: none;">#}
+                        {#                                                <div class="mgt-client-review text-dark mgt-client-review-style-box mgt-client-review-shadow mgt-client-review-border">#}
+                        {#                                                    <div class="mgt-client-review-details">#}
+                        {#                                                        <div class="mgt-client-review-content">#}
+                        {#                                                            Very nice design, the theme also is quiet flexible you can customize many features. They also gave me great support. Congratulations! Thank you for this Theme.#}
+                        {#                                                        </div>#}
+                        {#                                                        <div class="mgt-client-review-title">#}
+                        {#                                                            <div class="mgt-client-review-image"><img src="upload/author-1-40x40.jpg" alt="Antony Marvin" /></div>#}
+                        {#                                                            <h5>Antony Marvin</h5>#}
+                        {#                                                            <div class="mgt-client-review-position">Head of MND</div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                                <div class="mgt-client-review text-dark mgt-client-review-style-box mgt-client-review-shadow mgt-client-review-border">#}
+                        {#                                                    <div class="mgt-client-review-details">#}
+                        {#                                                        <div class="mgt-client-review-content">#}
+                        {#                                                            Very nice and clean, it gives your site a professional impression. The customer support is extremely fast and helpful. Thanks for an awesome theme!#}
+                        {#                                                        </div>#}
+                        {#                                                        <div class="mgt-client-review-title">#}
+                        {#                                                            <div class="mgt-client-review-image"><img src="upload/author-2-40x40.jpg" alt="Amalia Stivens" /></div>#}
+                        {#                                                            <h5>Amalia Stivens</h5>#}
+                        {#                                                            <div class="mgt-client-review-position">Senior Designer</div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                                <div class="mgt-client-review text-dark mgt-client-review-style-box mgt-client-review-shadow mgt-client-review-border">#}
+                        {#                                                    <div class="mgt-client-review-details">#}
+                        {#                                                        <div class="mgt-client-review-content">#}
+                        {#                                                            Every aspect of this theme is incredible. It's easy to use, extremely customizable, and looks amazing. Has to be my favorite theme ever used.#}
+                        {#                                                        </div>#}
+                        {#                                                        <div class="mgt-client-review-title">#}
+                        {#                                                            <div class="mgt-client-review-image"><img src="upload/author-4-40x40.jpg" alt="Bradly Cooper" /></div>#}
+                        {#                                                            <h5>Bradly Cooper</h5>#}
+                        {#                                                            <div class="mgt-client-review-position">Copywriter</div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                                <div class="mgt-client-review text-dark mgt-client-review-style-box mgt-client-review-shadow mgt-client-review-border">#}
+                        {#                                                    <div class="mgt-client-review-details">#}
+                        {#                                                        <div class="mgt-client-review-content">#}
+                        {#                                                            The theme is lovely itself, though we got great amount of help in customizing it the way we want. Magnium Themes  was very helpful and answered all of our questions.#}
+                        {#                                                        </div>#}
+                        {#                                                        <div class="mgt-client-review-title">#}
+                        {#                                                            <div class="mgt-client-review-image"><img src="upload/author-5-40x40.jpg" alt="Annet James" /></div>#}
+                        {#                                                            <h5>Annet James</h5>#}
+                        {#                                                            <div class="mgt-client-review-position">Founder JevelGroup</div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                            </div>#}
+                        {#                                            <div class="clear"></div>#}
+                        {#                                        </div>#}
+                        {##}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        {#                        <div#}
+                        {#                            data-vc-full-width="true"#}
+                        {#                            data-vc-full-width-init="false"#}
+                        {#                            data-vc-parallax="1.5"#}
+                        {#                            data-vc-parallax-image="upload/contactstreet.jpg"#}
+                        {#                            class="vc_row wpb_row vc_row-fluid vc_custom_1491832935995 vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving"#}
+                        {#                        >#}
+                        {#                            <div class="wpb_column vc_column_container vc_col-sm-12">#}
+                        {#                                <div class="vc_column-inner">#}
+                        {#                                    <div class="wpb_wrapper">#}
+                        {#                                        <div class="mgt-client-reviews-wrapper">#}
+                        {#                                            <div id="mgt-client-reviews-42699997" class="mgt-client-reviews wpb_content_element owl-invert-nav" style="display: none;">#}
+                        {#                                                <div class="mgt-client-review text-white mgt-client-review-style-wide">#}
+                        {#                                                    <div class="mgt-client-review-details">#}
+                        {#                                                        <div class="mgt-client-review-content">#}
+                        {#                                                            Very nice design, the theme also is quiet flexible you can customize many features. They also gave me great support. Congratulations! Thank you for this Theme.#}
+                        {#                                                        </div>#}
+                        {#                                                        <div class="mgt-client-review-title">#}
+                        {#                                                            <div class="mgt-client-review-image"><img src="upload/author-1-40x40.jpg" alt="Antony Marvin" /></div>#}
+                        {#                                                            <h5>Antony Marvin</h5>#}
+                        {#                                                            <div class="mgt-client-review-position">Head of MND</div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                                <div class="mgt-client-review text-white mgt-client-review-style-wide">#}
+                        {#                                                    <div class="mgt-client-review-details">#}
+                        {#                                                        <div class="mgt-client-review-content">#}
+                        {#                                                            Very nice and clean, it gives your site a professional impression. The customer support is extremely fast and helpful. Thanks for an awesome theme!#}
+                        {#                                                        </div>#}
+                        {#                                                        <div class="mgt-client-review-title">#}
+                        {#                                                            <div class="mgt-client-review-image"><img src="upload/author-2-40x40.jpg" alt="Amalia Stivens" /></div>#}
+                        {#                                                            <h5>Amalia Stivens</h5>#}
+                        {#                                                            <div class="mgt-client-review-position">Senior Designer</div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                                <div class="mgt-client-review text-white mgt-client-review-style-wide">#}
+                        {#                                                    <div class="mgt-client-review-details">#}
+                        {#                                                        <div class="mgt-client-review-content">#}
+                        {#                                                            Every aspect of this theme is incredible. It's easy to use, extremely customizable, and looks amazing. Has to be my favorite theme ever used.#}
+                        {#                                                        </div>#}
+                        {#                                                        <div class="mgt-client-review-title">#}
+                        {#                                                            <div class="mgt-client-review-image"><img src="upload/author-4-40x40.jpg" alt="Bradly Cooper" /></div>#}
+                        {#                                                            <h5>Bradly Cooper</h5>#}
+                        {#                                                            <div class="mgt-client-review-position">Copywriter</div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                                <div class="mgt-client-review text-white mgt-client-review-style-wide">#}
+                        {#                                                    <div class="mgt-client-review-details">#}
+                        {#                                                        <div class="mgt-client-review-content">#}
+                        {#                                                            The theme is lovely itself, though we got great amount of help in customizing it the way we want. Magnium Themes  was very helpful and answered all of our questions.#}
+                        {#                                                        </div>#}
+                        {#                                                        <div class="mgt-client-review-title">#}
+                        {#                                                            <div class="mgt-client-review-image"><img src="upload/author-5-40x40.jpg" alt="Annet James" /></div>#}
+                        {#                                                            <h5>Annet James</h5>#}
+                        {#                                                            <div class="mgt-client-review-position">Founder JevelGroup</div>#}
+                        {#                                                        </div>#}
+                        {#                                                    </div>#}
+                        {#                                                </div>#}
+                        {#                                            </div>#}
+                        {#                                            <div class="clear"></div>#}
+                        {#                                        </div>#}
+                        {##}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        {#                        <div class="vc_row-full-width vc_clearfix"></div>#}
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

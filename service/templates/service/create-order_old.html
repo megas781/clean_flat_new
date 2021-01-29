@@ -1,0 +1,20 @@
+{% extends 'master/layout.html' %}
+
+{% block content %}
+
+    {{ request.user }}
+
+    <h1>Создание заказа</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+{#        <input type="hidden" name="user-id" value="{{ u}}">#}
+        <button type="submit" class="btn btn-success">Создать заказ</button>
+    </form>
+
+    {#    <h3>Здесь будет форма заказа</h3>#}
+    {#    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda beatae corporis dolores doloribus inventore ipsam, iste molestias necessitatibus nemo neque nisi officia optio possimus quas qui quos reiciendis sequi velit vitae. Aliquid exercitationem facilis harum provident! Aliquid, placeat, totam? Assumenda autem commodi consectetur dignissimos dolore, dolores earum eius eligendi error eum expedita impedit nesciunt nisi placeat quam quos repellendus sed similique ullam voluptate. Aperiam, architecto consequatur consequuntur culpa earum et eveniet ipsam, mollitia nulla optio porro quia quo, sed sequi totam ullam vero. Asperiores atque autem deleniti dolores ducimus error ipsum nisi nostrum numquam perferendis, quibusdam recusandae sint temporibus veniam veritatis. Aliquid cum deleniti dignissimos, dolore dolorum eius excepturi exercitationem harum hic impedit ipsa iste labore magni maxime pariatur perferendis porro quas rem saepe sunt totam voluptatem voluptatibus. Eum, explicabo, sunt. Accusamus eligendi ex mollitia nemo praesentium quaerat quis tenetur. Ea eius eum totam? Accusamus accusantium alias aspernatur dolor dolorem doloremque ducimus enim esse est exercitationem explicabo fuga fugit hic id illum ipsa ipsum labore laborum laudantium magnam mollitia nam necessitatibus nesciunt, nihil nobis obcaecati odio quibusdam quisquam quod recusandae saepe similique unde voluptate! Architecto, eligendi, ratione? Atque expedita fugiat itaque nobis numquam qui ratione sapiente unde vitae voluptas.#}
+    {#    </p>#}
+
+{% endblock %}

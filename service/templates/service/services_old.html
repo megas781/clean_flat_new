@@ -1,0 +1,19 @@
+{% extends 'master/layout.html' %}
+
+{% block content %}
+
+    <h1>Наши услуги</h1>
+
+    <div class="row">
+
+    {% for service in services %}
+        <div class="col-lg-4 col-md-6 col-xl-3 bg-warning">
+			<h3>{{ service.title }} {{ service.id }}</h3>
+			<p>{{ service.description }} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum molestiae neque odio perferendis voluptate? Aspernatur at consequuntur deserunt, ducimus ea esse, illo impedit maxime molestias mollitia natus quis soluta totam?</p>
+			<p><a href="" target="_blank" class="btn btn-success">Подробнее</a></p>
+		</div>
+    {% endfor %}
+
+	</div>
+
+{% endblock %}
