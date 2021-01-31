@@ -21,3 +21,6 @@ def about_us_func(req):
 
 def faq_func(req):
     return render(req, 'master/faq.html')
+
+def landing_func(req):
+    return render(req, 'master/landing.html')

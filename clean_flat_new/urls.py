@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from master import views
 from service.views import MyOrdersListView
 
 urlpatterns = [
@@ -23,5 +24,6 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('login/', include('login.urls')),
     path('service/', include('service.urls')),
-    path('my-orders/', MyOrdersListView.as_view(), name='my-orders')
+    path('my-orders/', MyOrdersListView.as_view(), name='my-orders'),
+
 ]

@@ -20,5 +20,6 @@ urlpatterns = [
     path('', views.index_func, name='master-index-url'),
     path('about', views.about_us_func, name='about-url'),
     path('faq', views.faq_func, name='faq-url'),
-    path('contacts', views.contacts_func, name='contacts-url')
+    path('contacts', views.contacts_func, name='contacts-url'),
+    path('landing', views.landing_func, name='landing')
 ]

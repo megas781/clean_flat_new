@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4150aa92-4123-4928-917c-5d1335ecc440" name="fit">
+        <fileTransfer rootFolder="/home/std" accessType="SFTP" host="std-699.ist.mospolytech.ru" port="22" sshConfigId="e3aacf87-51f1-4854-8a28-b1d1d32bdc3c" sshConfig="std@std-699.ist.mospolytech.ru:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
